@@ -1,0 +1,36 @@
+\chapter{Zawartość płyty CD}
+\thispagestyle{chapterBeginStyle}
+\label{plytaCD}
+
+Dodatek ten krótko omówiona zawartość dołączonej do pracy płyty CD. Zawiera ona implementację generatora jak i testów w języku Python. Umieszczono na niej również wszystkie inne pliki wykorzystane w niniejszej pracy.
+\dirtree{%
+.1 /.
+.2 prepared\_binary.
+.3 lcm.bin \DTcomment{binarna postać wyniku pracy generatora LCM}.
+.3 tarus.bin \DTcomment{binarna postać wyniku pracy generatora Tarus}.
+.3 crng.bin \DTcomment{binarna postać wyniku pracy generatora CRNG}.
+.3 my.bin \DTcomment{binarna postać wyniku pracy naszego generatora}.
+.2 prepared\_num.
+.3 lcm.txt \DTcomment{wynik pracy generatora LCM w postaci 32-bitowych liczb}.
+.3 tarus.txt \DTcomment{wynik pracy generatora Tarus w postaci 32-bitowych liczb}.
+.3 crng.txt \DTcomment{wynik pracy generatora CRNG w postaci 32-bitowych liczb}.
+.3 my.txt \DTcomment{wynik pracy naszego generatora w postaci 32-bitowych liczb}.
+.2 tests.
+.3 frequency\_test.py \DTcomment{kod testu częstotliwości}.
+.3 block\_frequency\_test.py \DTcomment{kod testu jedynek w bloku}.
+.3 run\_test.py \DTcomment{kod testu nieprzerwanych ciągów}.
+.3 longest\_run\_in\_block\_test.py \DTcomment{kod testu najdłuższego ciągu}.
+.3 fourier\_test.py \DTcomment{kod testu nieokresowości}.
+.3 overlapping\_template\_test.py \DTcomment{kod testu nakładających się wzorców}.
+.3 linear\_complexity\_test.py \DTcomment{kod testu złożoności liniowej}.
+.3 last\_cross\_test.py \DTcomment{kod testu ostatniego przecięcia}.
+.3 max\_cumsum\_test.py \DTcomment{kod testu największej sumy}.
+.3 matrix\_rank\_test.py \DTcomment{kod testu rang macierzy}.
+.3 utils.py \DTcomment{kod metod pomocniczych}.
+.3 \_\_init\_\_.py \DTcomment{kod modułu tests}.
+.2 addresses.txt \DTcomment{lista najpopularniejszych stron www}.
+.2 preprocesor.py \DTcomment{funkcje pomocnicze do zapisu lub odczytu danych z pliku}.
+.2 generator.py \DTcomment{kod zaprezentowanego generatora}.
+.2 test\_generators.py \DTcomment{kod generatorów LCM, Tarus i CRNG}.
+.2 testing.py \DTcomment{kod programu testującego}.
+}

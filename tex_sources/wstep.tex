@@ -1,0 +1,14 @@
+\chapter{Cel pracy}
+\thispagestyle{chapterBeginStyle}
+
+Celem pracy jest stworzenie prostego systemu generującego liczby losowe, w tym celu zostaną wykorzystanie informacje o czasie dostępu do zasobów sieciowych (czas odpowiedzi ze strony serwera lub czas pobrania pliku z serwera itp.). Liczby losowe odnajdują zastosowanie między innymi w: kryptografii, statystyce, symulacjach komputerowych, jak również w tak przyziemnych branżach, jak gry komputerowe. Nie każdy ciąg zmiennych losowych jest jednak użyteczny w wyżej przedstawionych zastosowaniach. Powinien on spełniać dwie cechy:
+\begin{description}
+\item[jednostajność:] w matematyce rozkładem jednostajnym określa się taki, w którym szansa wylosowania liczby z dowolnego przedziału $[a, b)  \subseteq [0, 1)$ jest równa $b-a$, czyli mierze Lebesgue’a. Komputery są maszynami dyskretnymi i skończonymi zatem nasz system będzie generował liczby o rozkładzie dyskretnym jednostajnym, a więc liczby naturalne od 0 do $2^{64}-1$ włącznie, z prawdopodobieństwem wylosowania każdej z nich równym $\frac{1}{2^{64}}$.
+\item[niezależność:] ciąg niezależnych zmiennych losowych, charakteryzuje się tym że wszystkie zmienne losowe są niezależne parami, trójkami, czwórkami (\dots). W naszym przypadku oznacza to, że poprzednie wyniki w żaden sposób nie wpływają na kolejne. Znając więc dowolną liczbę poprzednich wyników, nie będziemy mogli w żaden lepszy sposób przewidzieć kolejnego niż to, że szansa wylosowania  każdej liczby jest równa $\frac{1}{2^{64}-1}$. Jest to szczególnie ważny warunek w kryptografii, gdzie niemożliwość przewidzenia kolejnego wyniku jest podstawą bezpieczeństwa. 
+\end{description}
+Te dwie cechy możemy uprościć do następującej formuły:
+\begin{equation}
+    \label{eg:target_def}
+    (\forall i \in \mathbb{N})(\forall k \in \{0, 1, \dots, 2^{64}-1\}) P(X_i=k|X_{i-1}X_{i-2}\dots X_{0}) = \frac{1}{2^{64}}
+\end{equation}
+Mając ciąg je spełniający, w łatwy sposób wygenerować można niezależny ciąg zmiennych losowych o innych rozkładach, używając takich algorytmów jak Boxa-Mullera czy prostego odrzucania próbek. Stąd też te dwa warunki są wystarczające we wszystkich znanych zastosowaniach generatorów liczb losowych.

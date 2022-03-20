@@ -1,0 +1,10 @@
+from .frequency_test import frequency_test
+from .block_frequency_test import block_frequency_test, block_frequency_test_1024
+from .run_test import run_test
+from .longest_run_in_block_test import longest_run_in_block_test, longest_run_in_block_test_1024
+from .fourier_test import fourier_test
+from .overlapping_template_test import overlapping_template_test
+from .linear_complexity_test import linear_complexity_test
+from .last_cross_test import last_cross_test
+from .max_cumsum_test import max_cumsum_test
+from .matrix_rank_test import matrix_rank_test
